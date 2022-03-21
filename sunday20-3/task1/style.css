@@ -1,0 +1,27 @@
+nav{
+    background-color: #05595B;
+    padding: .5em;
+}
+body{
+    background-image: url("https://www.sqorebda3.com/vb/attachments/20012/");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+a{
+    font-size: 1em;
+    color: #E2D784;
+}
+h1{
+    color: #062C30;
+    text-align: center;
+}
+@media (max-width:300px){
+    nav{ padding: .15em;}
+    a{ font-size:.5em ;}
+}

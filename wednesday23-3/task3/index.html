@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #FDD2BF;
+        }
+        div{
+            margin: 1em;
+            font-size: large;
+        }
+        img{
+            width: 30%;
+            height: 25%;
+            margin:2em;
+        }
+        label{
+            color: #B61919;
+            font-weight: bold;
+        }
+        option{
+            color: #FF6B6B;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <label for="flag">Choose a country:</label>
+    <select id="flag" name="contries" onchange="change_photo()">
+        <option value="select">Select</option>
+        <option value="jordan">Jordan</option>
+        <option value="syria">Syria</option>
+        <option value="palestine">Palestine</option>
+        <option value="iraq">Iraq</option>
+    </select>
+    </div>
+    <img src="" id="image">
+    
+</body>
+<script src="app.js"></script>
+</html>

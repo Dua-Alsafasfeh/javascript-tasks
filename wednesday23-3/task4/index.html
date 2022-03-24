@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+           background-color: #262A53;
+           font-size: large;
+       }
+       select{
+           font-size: large;
+           padding: .5em;
+       }
+       label{   
+            font-size: 1.5em;
+            color: #FFE3E3;
+        }
+    </style>
+</head>
+<body>
+    <select name="font-family" id="font-f" onchange="change_font_family()">
+        <option value="times new roman">Times New Roman</option>
+        <option value="Georgia">Georgia</option>
+        <option value="arial">Arial</option>
+    </select>
+    <br><br>
+    <select name="font-size" id="font-s" onchange="change_font_size()">
+        <option value="12">12</option>
+        <option value="24">24</option>
+        <option value="28">28</option>
+    </select>
+    <br><br>
+    <form action=" " id="style">
+        <input type="checkbox" id="style1" name="italic" value="italic" onchange="change_font_style()">
+        <label for="style1"> Italic</label>
+        <input type="checkbox" id="style2" name="bold" value="bold" onchange="change_font_weight()">
+        <label for="style2">Bold</label>
+        <input type="checkbox" id="style3" name="underline" value="underline" onchange="change_text_decoration()">
+        <label for="style3"> Underline</label><br><br>
+        <textarea id="text" name="text" rows="5" cols="50"></textarea>
+    </form>
+</body>
+<script src="app.js"></script>
+</html>

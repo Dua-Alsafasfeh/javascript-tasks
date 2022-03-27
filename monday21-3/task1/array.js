@@ -23,7 +23,8 @@ var fruits=["Tomato","Banana","Watermelon"]
 var fruits=["Tomato","Banana","Watermelon"]
 console.log("the index of banana is:1");
 console.log("the index of tomato is:0");
-
+document.getElementById("q1").innerHTML="What is the index of Banana,Tomato,fruits=[Tomato,Banana,Watermelon]";
+document.getElementById("ans1").innerHTML= "the index of banana is:1" +(" \n ")+ "the index of tomato is:0";
 /*
 3
 Create an array represents your:
@@ -37,6 +38,9 @@ let favourite_sport=["volleyball","golf", "table tennis"];
 console.log(favourite_sport);
 let favourite_movie=["the man who know infinity" ,"the shawshank redemption", "judy abbott","harry  potter"];
 console.log(favourite_movie);
+
+document.getElementById("q2").innerHTML="Create an array represents your:Favorite Food,Favorite Sport ,Favorite Movie"
+document.getElementById("ans2").innerHTML= (favourite_food +(" \n ")+ favourite_sport +(" \n ")+ favourite_movie);
 /*
 4
 Create a function called firstOfArray

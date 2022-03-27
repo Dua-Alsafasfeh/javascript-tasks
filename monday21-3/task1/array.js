@@ -24,7 +24,7 @@ var fruits=["Tomato","Banana","Watermelon"]
 console.log("the index of banana is:1");
 console.log("the index of tomato is:0");
 document.getElementById("q1").innerHTML="What is the index of Banana,Tomato,fruits=[Tomato,Banana,Watermelon]";
-document.getElementById("ans1").innerHTML= "the index of banana is:1" +(" \n ")+ "the index of tomato is:0";
+document.getElementById("ans1").innerHTML= "the index of banana is:1" + '<br>'+ "the index of tomato is:0";
 /*
 3
 Create an array represents your:
@@ -40,7 +40,7 @@ let favourite_movie=["the man who know infinity" ,"the shawshank redemption", "j
 console.log(favourite_movie);
 
 document.getElementById("q2").innerHTML="Create an array represents your:Favorite Food,Favorite Sport ,Favorite Movie"
-document.getElementById("ans2").innerHTML= (favourite_food +(" \n ")+ favourite_sport +(" \n ")+ favourite_movie);
+document.getElementById("ans2").innerHTML= `My favourite_food is: ${favourite_food} <br> My favourite_sport is: ${favourite_sport} <br> My favourite_movie is: ${favourite_movie}`;
 /*
 4
 Create a function called firstOfArray
@@ -55,6 +55,8 @@ function firstOfArray(arr1){
 }
 console.log(firstOfArray([5,2,4]));
 console.log(firstOfArray(["t","y","u","x"]));
+document.getElementById("q3").innerHTML="Create a function called firstOfArray";
+document.getElementById("ans3").innerHTML= `firstOfArray([5,2,4]) is: ${firstOfArray([5,2,4])} <br> firstOfArray(["t","y","u","x"] is ${firstOfArray(["t","y","u","x"])} `;
 /*
 5
 Create a function called lastOfArray
@@ -71,6 +73,8 @@ function lastOfArray(arr2){
 }
 console.log(lastOfArray(array_1));
 console.log(lastOfArray(array_2));
+document.getElementById("q4").innerHTML="Create a function called lastOfArray";
+document.getElementById("ans4").innerHTML= `lastOfArray([5,2,4]) is: ${lastOfArray(array_1)} <br> lastOfArray(["t","y","u","x"] is ${lastOfArray(array_2)} `;
 /*
 6
 Using console make this array to be like this one (push, unshift, shift, pop)
@@ -85,7 +89,8 @@ array.shift();
 array.shift();
 array.unshift(1,3,4,6,8);
 console.log(array);
-
+document.getElementById("q5").innerHTML= "var array = [0,5,7,9] to [1,3,4,6,8,9,10]";
+document.getElementById("ans5").innerHTML= array;
 /*
 7
 Using the console try to figure out what the thing that’s (push, unshift, shift, pop) return to you
@@ -98,7 +103,8 @@ array.pop();
 array.pop();
 array.push(9,-7,3.5);
 console.log(array);
-
+document.getElementById("q6").innerHTML="var array2 = [0,5,7,9] to [5,9,-7,3.5] ";
+document.getElementById("ans6").innerHTML= array;
 
 /*
 8
@@ -114,16 +120,18 @@ Ex: middleOfArray(["t","u","g","x"]) =>"u and g"
 let arr_1=[1,4,5];
 let arr_2=["t","u","g","x"];
 
-function middleOfArray(ar){
-    if (ar.length%2==0){
-        console.log([(ar.length/2)-1] + " , " + [(ar.length)/2]);
+function middleOfArray(arr){
+    if (arr.length %2 == 0){
+        return (arr[(arr.length/2 -1)] + " , " + arr[(arr.length)/2]);
     }
     else{
-        console.log([((ar.length/2)-0.5)]);
+        return arr[((arr.length/2)-0.5)];
     }
 }
-middleOfArray(arr_1);
-middleOfArray(arr_2);
+console.log(middleOfArray(arr_1));
+console.log(middleOfArray(arr_2));
+document.getElementById("q7").innerHTML="Create a function called middleOfArray";
+document.getElementById("ans7").innerHTML= `middleOfArray([1,4,5]) = ${middleOfArray(arr_1)} <br> middleOfArray(["t","u","g","x"]) = ${middleOfArray(arr_2)}`;
 /*
 9
 Using assignment operator (=)

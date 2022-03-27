@@ -19,6 +19,8 @@ function tellFortune(X ,Y ,Z ,N){
   console.log(`You will be a ${X} in ${Y}, and married to ${Z} with ${N} kids.`);
 }
 tellFortune(job_title, geographic_location, partner_name, number_of_children);
+document.getElementById("q1").innerHTML="Q1:Write a function named tellFortune";
+document.getElementById("ans1").innerHTML=`You will be a ${job_title} in ${geographic_location}, and married to ${ partner_name} with ${ number_of_children} kids.`;
 
 /*
 2
@@ -32,7 +34,14 @@ outputs the result to the screen like so:
 Ex: calculateDogAge(1);
 => "Your doggie is 7 years old in dog years!"
 */
-
+function calculateDogAge(puppy_age){
+  let age= puppy_age*7;
+  return (`Your doggie is ${age} years old in dog years!`);
+}
+calculateDogAge(1);
+console.log(calculateDogAge(1));
+document.getElementById("q2").innerHTML ="Q2:Write a function named calculateDogAge";
+document.getElementById("ans2").innerHTML =` ${calculateDogAge(1)}`;
 
 /*
 3
@@ -45,8 +54,16 @@ outputs the result to the screen like so:
 Ex: calculateSupply(30, 3);
 => 'You will need 76650 cups of tea to last you until the ripe old age of 100;
 */
-
-
+function calculateSupply( age , amount_per_day ){
+  let the_age= (100 - age );
+  let the_tea= (the_age*365) * amount_per_day;
+  return (`You will need ${the_tea} cups of tea to last you until the ripe old age of 100`)
+}
+calculateSupply(30, 3);
+console.log(calculateSupply(30, 3));
+document.getElementById("q3").innerHTML ="Q3:Write a function named calculateSupply";
+document.getElementById("ans3").innerHTML =`${calculateSupply(30, 3)}`;
+///////////////////////////////////////////////////
 /*
 4
 Write a function called greet that:
@@ -61,7 +78,10 @@ function greet(name){
   console.log(`Hello ${name}`);
 }
 greet(your_name);
+document.getElementById("q4").innerHTML="Q4:Write a function called greet that return hello name";
+document.getElementById("ans4").innerHTML=(`Hello ${your_name}`);
 
+//////////////////////////////////////////////////////////////
 /*
 5
 what is the error:
@@ -82,7 +102,7 @@ function double('7') {
 */
 
 
-
+///////////////////////////////////////////////////////////////////
 /*
 6
 fix these functions:
@@ -108,7 +128,7 @@ function (x) double3 {
 }
 */
 
-
+/////////////////////////////////////////////////////////////////
 /*
 7
 Write a function called cube that:
@@ -118,9 +138,15 @@ Ex: cube(4)
 => 64
 */
 function cube(x){
-  return x**3;
+  return (x**3);
+  
 }
 cube(4);
+console.log(cube(4));
+document.getElementById("q5").innerHTML="Q5:Write a function called cube";
+document.getElementById("ans5").innerHTML=(`the cube of 4 = ${cube(4)}`);
+
+/////////////////////////////////////////////////
 /*
 8
 Write a function called multiply that:
@@ -132,9 +158,14 @@ Ex: multiply(5,4)
 => 20
 */
 function multiply(x ,y){
-  return x*y;
+  return ( x*y );
 }
 multiply(3,4);
+console.log(multiply(3,4));
+document.getElementById("q6").innerHTML ="Q6:Write a function called multiply";
+document.getElementById("ans6").innerHTML =`the multiply of 3 with 4 = ${multiply(3,4)}`;
+
+/////////////////////////////////////////////////////////
 /*
 9
 Write a function called canIGetADrivingLicense that:
@@ -150,19 +181,23 @@ Ex: canIGetADrivingLicense(17)
 
 Ex: canIGetADrivingLicense(20)
 => "yes you can"
-
 */
 function canIGetADrivingLicense(age){
   if (age>=20){
     return ('yes you can');
   }
   else {
-    age_must_be=20-age;
+    let age_must_be=20-age;
     return (`please come back after ${age_must_be} years to get one`);
   }
 }
 canIGetADrivingLicense(20);
+canIGetADrivingLicense(17);
 
+document.getElementById("q7").innerHTML ="Q7:Write a function called canIGetADrivingLicense";
+document.getElementById("ans7").innerHTML =`canIGetADrivingLicense(20)? ${canIGetADrivingLicense(20)} <br> canIGetADrivingLicense(17) ? ${canIGetADrivingLicense(17)} `;
+
+//////////////////////////////////////////////////////////////
 /*
 10
 Write a function called sameLength
@@ -186,6 +221,11 @@ function sameLength(word1 , word2){
   }
 }
 sameLength("tree" , "clue");
+sameLength("tree","car")
+document.getElementById("q8").innerHTML ="Q8:Write a function called sameLength";
+document.getElementById("ans8").innerHTML =`canIGetADrivingLicense(20)? ${canIGetADrivingLicense(20)} <br> canIGetADrivingLicense(17) ? ${canIGetADrivingLicense(17)} `;
+
+/////////////////////////////////////////////////////
 /*
 11
 Write a function called largerNubmer
@@ -207,6 +247,10 @@ function largerNubmer(n1 , n2){
   }
 }
 largerNubmer(5 , 7);
+console.log(largerNubmer(5 , 7));
+document.getElementById("q9").innerHTML ="Q9:Write a function called largerNubmer";
+document.getElementById("ans9").innerHTML =`largerNubmer  of (5 , 7) is: ${largerNubmer(5 , 7)}`;
+///////////////////////////////////////////////////////////////////
 /*
 12
 Write a function called smallerNubmer
@@ -224,7 +268,6 @@ Ex: smallerNubmer(5,99,3)
 
 Ex: smallerNubmer(5,3,3)
 => 3
-
 */
 function smallerNubmer(n1 , n2 , n3){
   if (n1<n2){
@@ -241,6 +284,11 @@ function smallerNubmer(n1 , n2 , n3){
     }
   } 
 smallerNubmer(5 , 7, 9);
+console.log(smallerNubmer(5 , 7, 9));
+document.getElementById("q10").innerHTML ="Q10:Write a function called smallerNubmer";
+document.getElementById("ans10").innerHTML =`smallerNubmer  of (5 , 7, 9) is: ${smallerNubmer(5 , 7, 9)}`;
+
+////////////////////////////////////////////////////////////////////////
 /*
 13
 Write a function called shorterString
@@ -283,9 +331,9 @@ function shorterString(str1 ,str2 ,str3 ,str4, str5){
         return str3;
       }else {return str5;}
     }
-
   }
 }
+//////////////////////////////////////////////////////////////////
 /*
 14
 Write a function called longerString
@@ -301,6 +349,9 @@ Ex: longerString("air","schoo","car","github")
 try all the cases (change the order of the longestString)
 */
 
+
+
+//////////////////////////////////////////////////////////////////////
 /*
 15
 Write a function called isEven
@@ -323,6 +374,11 @@ function isEven(number){
   }
 }
 isEven(5);
+console.log(isEven(5));
+document.getElementById("q13").innerHTML ="Q13:Write a function called isEven";
+document.getElementById("ans13").innerHTML =`isEven(5)? ${isEven(5)} <br>  isEven(2)? ${ isEven(2)}`;
+
+///////////////////////////////////////////////////////////////
 /*
 16
 Write a function called isOdd
@@ -344,7 +400,11 @@ function isOdd(number){
   }
 }
 isOdd(5);
+console.log(isOdd(5));
+document.getElementById("q14").innerHTML ="Q14:Write a function called isOdd";
+document.getElementById("ans14").innerHTML =`isOdd(5)? ${isOdd(5)} <br> isOdd(4)? ${isOdd(4)}`;
 
+///////////////////////////////////////////////////////////////////////
 /*
 17
 Write a function called positive
@@ -366,6 +426,10 @@ function positive(number){
   }
 }
 positive (-5);
+console.log(positive (-5));
+document.getElementById("q15").innerHTML ="Q15:Write a function called positive";
+document.getElementById("ans15").innerHTML =`positive (-5)= ${positive (-5)} <br> positive(4)= ${positive(4)}`;
+//////////////////////////////////////////////////////////////////
 /*
 18
 Write a function called fullName

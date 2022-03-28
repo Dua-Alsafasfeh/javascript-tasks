@@ -1,0 +1,65 @@
+<!-- built web browser that contains a form for a mobile store where it takes client name 
+and phone type and render the data inside table contains the following column (client name, phone type,
+price phone and phone condition), the phone price is between (50,500) 
+and the should render passed on phone price if it more than 100 shows in condition "new Device" less than 
+show "used" and should store data in local storage when I refresh the page still show the data I store it before.
+
+Use the following  HTML page -->
+
+ <!-- *** HTML *** -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+    <title>phone Store</title>
+</head>
+<body>
+  <header>
+    <nav> 
+      <h1>Mobile store</h1>
+    </nav>
+  </header>
+    <br>
+  <section class="container">
+      <div class="divForm">
+          <form action="" id="mobForm">
+            <fieldset>
+              <legend>Mobile Form</legend>
+            <label for="" id="userName">Name</label>
+            <br><input type="text" name="useName">
+            <br><br>
+            <label for="" id="devisType">Type</label>
+            <br>
+            <select name="typeNameD" id="typeName">
+              <option value="samsung">samsung</option>
+              <option value="apple">apple</option>
+              <option value="Huawi">Huawi</option>
+       </select>
+       <br><br>
+       <button type="submit">Add Device</button> 
+       </fieldset>
+        </form>
+      </div>
+      <div class="divTable">
+        <table id="tableCon">
+          <thead id="headTa">
+            <tr >
+              <td>User Name</td>
+              <td>Type of Device</td>
+              <td>The Price</td>
+              <td>Condition</td>
+            </tr>
+          </thead>
+          <tbody id="boadTa"></tbody>
+          <tfoot id="footTa"></tfoot>
+        </table>
+
+      </div>
+  </section>
+    
+    <script src="app.js"></script>
+</body>
+</html>

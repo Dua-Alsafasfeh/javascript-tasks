@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url("https://media.istockphoto.com/photos/man-using-mobile-smart-phone-with-global-network-connection-and-picture-id1274394138?b=1&k=20&m=1274394138&s=170667a&w=0&h=DTMn7Vg-lHFiz3yuo1O1EUQYIYQ6Wx4RmQn0buuoOGs=");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+nav{
+    padding: 1em;
+    background-color: #262A53;
+}
+h1{
+    color: #FFE3E3;
+    text-align: center;
+}
+.container div{
+    display: inline-block; 
+}
+.divForm{
+    width:30%;
+}
+fieldset{
+    border:2px solid;
+}
+legend{
+    font-size: 2em;
+}
+label{
+    font-size:1.5em ;
+}
+input , select{
+    width: 50%;
+    padding: .5em;
+}
+option , button{
+    font-size: 1.25em;
+}
+.divTable{
+    width: 50%;
+    position: absolute;
+    top: 21%;
+    right: 5%
+}
+thead{
+    font-weight: bold;
+}
+td{
+    padding: .75em;
+    border: 2px solid #628395;
+    font-size: 1.25em;
+    color: #343F56;
+}
+  

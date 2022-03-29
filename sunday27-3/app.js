@@ -48,13 +48,15 @@ function condition (){
 ///////////////////////////////////////////////////////////////
 
 function showData( ){
-    let tableRow = document.createElement("tr")
-    let tablecol_1 = document.createElement("td");
-    let tablecol_2  = document.createElement("td");
-    let tablecol_3 = document.createElement("td");
-    let tablecol_4  = document.createElement("td");
+    tableBody.textContent=" ";
 
     for (let i = 0; i < mobileArray.length; i++) {
+        let tableRow = document.createElement("tr")
+        let tablecol_1 = document.createElement("td");
+        let tablecol_2  = document.createElement("td");
+        let tablecol_3 = document.createElement("td");
+        let tablecol_4  = document.createElement("td");
+        
         tableBody.appendChild(tableRow);
         tableRow.appendChild(tablecol_1);
         tableRow.appendChild(tablecol_2);

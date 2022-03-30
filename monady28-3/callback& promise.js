@@ -25,7 +25,7 @@ const posts = [
 
 //*************************************************************************/
 function getPosts() {
-    return new Promise((resolve,rejest)=>{
+    return new Promise((resolve,reject)=>{
       resolve (setTimeout(() => {
           let output = '';
            posts.map((post, index) => {
@@ -35,16 +35,16 @@ function getPosts() {
            document.body.innerHTML = output;
       }), 1000)
     
-    rejest(Error('bad'))
+    reject(Error('bad'))
   })} 
   
   function creatPost(post, callback) {
-      return new Promise((resolve,rejest)=>{
+      return new Promise((resolve,reject)=>{
         resolve(setTimeout(() => {
               posts.push(post);
               callback();
           }, 2000))
-          rejest(Error('bad')) ;
+          reject(Error('bad')) ;
       })
      
   }

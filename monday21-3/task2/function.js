@@ -146,6 +146,8 @@ console.log(cube(4));
 document.getElementById("q5").innerHTML="Q5:Write a function called cube";
 document.getElementById("ans5").innerHTML=(`the cube of 4 = ${cube(4)}`);
 
+///or math.pow(x,3)
+
 /////////////////////////////////////////////////
 /*
 8

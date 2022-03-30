@@ -12,7 +12,8 @@ function handleSubmit( event ){
    event.preventDefault();
    let userName=event.target.useName.value;
    let typeDevice=event.target.typeNameD.value;
-   new mobileStore (userName , typeDevice); 
+   new mobileStore (userName , typeDevice);
+    
 }
 // handleSubmit();
 
@@ -40,15 +41,6 @@ function mobileStore ( userName , typeDevice ){
 function priceOfMobile (min , max ){
     var x=Math.ceil(Math.random() * (max - min) + min);
     return x;
-}
-///////////////////////////////////////////////////////////////
-
-function condition (){
-    if ( mobileStore.price < 100){
-        return "used";
-    }else {
-        return "new Device";
-    }
 }
 ///////////////////////////////////////////////////////////////
 
@@ -94,3 +86,25 @@ function callFromLocalStorage(){
     showData( ); 
 }
 callFromLocalStorage( );
+/////////////////////////////////////////////////////////////////////////////////////////////
+let localForm=document.getElementById("locForm");
+let localPara=document.getElementById("cityResult");
+let button=document.getElementById("submit2");
+
+localForm.addEventListener("submit", function(event){
+    event.preventDefault( );
+    let city=event.target.locName.value;
+    getData(city);
+  });
+
+async function getData(x) {
+    let responce = await fetch(`https://eu1.locationiq.com/v1/search.php?key=pk.b2276be61ce386922b2493e591075217&q=${x}&format=json`);
+    let data = await responce.json( );
+    console.log(data[0]);
+    localPara.innerHTML=`City name is :${data[0].display_name.split(",",2)} || Longitude is :${data[0].lon} || latitude is:${data[0].lat}`;
+    document.querySelector(`#img`).src= data[0].icon;
+};
+
+
+
+

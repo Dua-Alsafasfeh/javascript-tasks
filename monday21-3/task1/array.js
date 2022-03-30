@@ -249,23 +249,28 @@ Ex: sumArray(nums) => 23
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-let nums_3 = [1, 2, 3, 8, 9];
-let sum_1 = 0;
-for (let i = 0; i < nums_3.length; i++) {
-    sum_1 += nums_3[i];
+function sumArray(array){
+    let l= array.length;
+    let sum_1=0;
+    for (let i=0; i<l; i++){
+        sum_1=sum_1+array[i];
+    }
+    return sum_1;
 }
-console.log(sum_1);
+
+let nums_3 = [1, 2, 3, 8, 9];
+console.log(sumArray(nums_3));
 document.getElementById("q11").innerHTML = "Q11:Create a function called sumArray";
-document.getElementById("ans11").innerHTML = `sumArray([1,2,3,8,9]) ==> ${sum_1}`;
+document.getElementById("ans11").innerHTML = `sumArray([1,2,3,8,9]) ==> ${sumArray( [1, 2, 3, 8, 9])}`;
 
 ////////////////////////////while loop///////////////////////////
-function sumArray(array) {
+function sumArray1(array) {
     let d = array.length;
     let sum_2 = 0;
-    let o = 0;
-    while (o < d) {
-        sum_2 = sum_2 + array[o];
-        o++;
+    let d1 = 0;
+    while (d1 < d) {
+        sum_2 = sum_2 + array[d1];
+        d1++;
     }
     return sum_2;
 }
@@ -333,18 +338,24 @@ function removeFromArray(array, element) {
     }
     return array;
 }
-console.log(removeFromArray([1,2,3,8,9],8));
+let nums_5= [1,2,3,8,9]
+console.log(removeFromArray(nums_5,8));
 document.getElementById("q13").innerHTML = "Q13:Create a function called removeFromArray";
-document.getElementById("ans13").innerHTML = `removeFromArray([1,2,3,8,9],8) ==> ${removeFromArray([1,2,3,8,9],8)}`;
-//////////////////
+document.getElementById("ans13").innerHTML = `removeFromArray([1,2,3,8,9],8) ==> ${removeFromArray(nums_5,8)}`;
+//////////////////while/////////
 
-let remove = [1, 2, 3, 8, 9]
-function removeFromArray(remove) {
-    remove.splice(3, 1)
-    console.log(remove);
+function removeFromArray1(array, element){
+    let a = array.length;
+    let b=0;
+    while(b<a){
+        if (array[b] == element){
+            array.splice(b,1)
+        }
+        b++
+    }
+    return array;
 }
-removeFromArray(remove);
-
+console.log(removeFromArray1(nums_5,8));
 /*
 16
 Create a function called oddArray
@@ -357,8 +368,34 @@ Ex: oddArray(nums) => [1,3,9]
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-
-
+function oddArray(array){
+    let l=array.length;
+    let list= [];
+    for(let i=0; i<l; i++){
+        if (array[i] % 2 != 0){
+            list.push(array[i])
+        }
+    }
+    return list;
+}
+let nums_6= [1,2,3,8,9]
+console.log(oddArray(nums_6));
+document.getElementById("q14").innerHTML = "Q14:Create a function called oddArray";
+document.getElementById("ans14").innerHTML = `oddArray( [1,2,3,8,9]) ==> ${oddArray( [1,2,3,8,9])}`;
+/////////////////////while////////
+function oddArray1(array){
+    let l2=array.length;
+    let List=[];
+    let I=0;
+    while(I<l2){
+        if (array[I] % 2 != 0){
+            List.push(array[I])
+        }
+    I++
+    }
+    return List;
+}
+console.log(oddArray1(nums_6));
 /*
 17
 Create a function called aveArray
@@ -374,7 +411,30 @@ Ex: aveArray(nums) => 16.6
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-
+function aveArray(array){
+    let l= array.length;
+    let sum_3=0;
+    for (let i=0; i <l; i++){
+        sum_3=sum_3 + array[i];
+    }
+    return sum_3/l;
+}
+let nums_7= [1,2,3,8,9];
+console.log(aveArray(nums_7));
+document.getElementById("q15").innerHTML = "Q15:Create a function called aveArray";
+document.getElementById("ans15").innerHTML = `aveArray( [1,2,3,8,9]) ==> ${aveArray( [1,2,3,8,9])}`;
+///////////////while////////////
+function aveArray2(array){
+    let l2= array.length;
+    let sum_4=0;
+    let I=0;
+    while (I<l2){
+        sum_4=sum_4+array[I];
+        I++;
+    }
+    return sum_4/l2;
+}
+console.log(aveArray(nums_7));
 
 /*
 18
@@ -422,7 +482,34 @@ Ex: repeatChar(string,"z") => 0
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-
+function repeatChar(string , char){
+    let l= string.length;
+    let sum_5= 0;
+    for(let i=0; i<l; i++){
+        if(string[i] == char){
+            sum_5+=1;
+        }
+    }
+    return sum_5;
+}
+var string= "alex mercer madrasa rashed2 emad hala"
+console.log(repeatChar(string,"a"));
+document.getElementById("q17").innerHTML = "Q17:Create a function called repeatChar";
+document.getElementById("ans17").innerHTML = `repeatChar("a") in alex mercer madrasa rashed2 emad hala ==> ${repeatChar(string,"a")}`;
+////////////////while//////////////
+function repeatChar1(string, char){
+    let l2= string.length;
+    let sum_6= 0;
+    let I=0;
+    while(I<l2){
+        if(string[I]==char){
+            sum_6+=1;
+        }
+        I++
+    }
+    return sum_6;
+}
+console.log(repeatChar1(string,"a"));
 
 /*
 20
@@ -436,13 +523,38 @@ Ex: evenIndexOddLength(strings) => ["madrasa"]
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-
+function evenIndexOddLength(array){
+    let l= array.length;
+    let list=[];
+    for(let i=0; i<l; i++){
+        let strl= array[i].length;
+        if ((strl % 2 != 0) && (i % 2 == 0)){
+            list.push(array[i]);
+        }
+    }
+    return list;
+}
+var string1= "alex mercer madrasa rashed2 emad hala"
+console.log(evenIndexOddLength(string1));
+document.getElementById("q18").innerHTML = "Q18:Create a function called evenIndexOddLength";
+document.getElementById("ans18").innerHTML = `evenIndexOddLength in alex mercer madrasa rashed2 emad hala ==> ${evenIndexOddLength(string1)}`;
+/////////////while///////////
+function evenIndexOddLength1(array){
+    let l2= array.length;
+    let List=[];
+    let I=0;
+    while(I<l2){
+        let StrL= array[I].length;
+        if ((StrL % 2 != 0) && (I % 2 == 0)){
+            List.push(array[I]);
+        }
+        I++;
+    }
+    return List;
+}
+console.log(evenIndexOddLength1(string1));
 
 /*
-
-
-
-
 
 21
 Create a function called powerElementIndex
@@ -455,6 +567,32 @@ Ex: powerElementIndex(nums) => [0, 5, 16, 27, 16, 100000]
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
+function powerElementIndex(array){
+    let l=array.length;
+    let list=[];
+    for (let i=0; i<l; i++){
+        let x= Math.pow(array[i], i);
+        list.push(x);
+    }
+    return list;
+}
+let nums_8= [44, 5, 4, 3, 2, 10];
+console.log(powerElementIndex(nums_8));
+document.getElementById("q19").innerHTML = "Q19:Create a function called powerElementIndex";
+document.getElementById("ans19").innerHTML = `powerElementIndex of  [44, 5, 4, 3, 2, 10] ==> ${powerElementIndex(nums_8)}`;
+////////////while//////////////
+function powerElementIndex1(array){
+    let l2= array.length;
+    let List=[];
+    let I=0;
+    while(I<l2){
+        let x= Math.pow(array[I], I);
+        List.push(x);
+        I++;
+    }
+    return List;
+}
+console.log(powerElementIndex1(nums_8));
 
 
 /*
@@ -469,4 +607,31 @@ Ex: evenNumberEvenIndex(nums) => [2,8,34]
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
-
+function evenNumberEvenIndex(array){
+    let l= array.length;
+    let list=[];
+    for(let i=0; i<l; i++){
+        if ((array[i] % 2 == 0) && (i % 2 == 0)){
+            list.push(array[i]);
+        }
+    }
+    return list;
+}
+let nums_9= [5,2,2,1,8,66,55,77,34,9,55,1];
+console.log(evenNumberEvenIndex(nums_9));
+document.getElementById("q20").innerHTML = "Q20:Create a function called evenNumberEvenIndex";
+document.getElementById("ans20").innerHTML = `evenNumberEvenIndex of  [5,2,2,1,8,66,55,77,34,9,55,1] ==> ${evenNumberEvenIndex(nums_9)}`;
+///////////////while////////////
+function evenNumberEvenIndex1(array){
+    let l2= array.length;
+    let List=[];
+    let I=0;
+    while(I<l2){
+        if ((array[I] % 2 == 0) && (I % 2 == 0)){
+            List.push(array[I]);
+        }
+        I++;
+    }
+    return List;
+}
+console.log(evenNumberEvenIndex1(nums_9));

@@ -5,20 +5,20 @@ callFromLocalStorage();
 
 function registration()
 {
-    var name= document.getElementById("t1").value;
-    var uname= document.getElementById("t3").value;
-    var email= document.getElementById("t2").value;
-    var email1= document.getElementById("t6").value;
-    var birthday= document.getElementById("t7").value;
     
-    var pwd= document.getElementById("t4").value;           
-    var cpwd= document.getElementById("t5").value;
+    let name= document.getElementById("t1").value;
+    let uname= document.getElementById("t3").value;
+    let email= document.getElementById("t2").value;
+    let email1= document.getElementById("t6").value;
+    let birthday= document.getElementById("t7").value;
+    let pwd= document.getElementById("t4").value;           
+    let cpwd= document.getElementById("t5").value;
     
     //email id expression code
-    var pwd_expression = /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
-    var letters = /[A-Za-z]+$/;
-    var filter = /([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    var capital=/[A_Z]/;
+    let pwd_expression = /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+    let letters = /[A-Za-z]+$/;
+    let filter = /([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    let capital=/[A_Z]/;
 
     if(name=='')
     {
@@ -80,9 +80,7 @@ function registration()
     }
     else
     {                                           
-           alert('Thank You for Registration & You are Redirecting to Website');
-           // Redirecting to other page or webste code. 
-           window.location = ""; 
+           alert('Thank You for Registration');
     }
     regform.push(name,uname,email,birthday);
     storeInLocalStorage();
@@ -107,5 +105,3 @@ function callFromLocalStorage(){
         // renderOrder(); 
     }
 }
-
-

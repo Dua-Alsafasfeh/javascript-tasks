@@ -21,7 +21,22 @@ Ex: subtract(2); => 2 - 1 - 0 => 1
 Ex: subtract(5); => 5 - 4 - 3 - 2 - 1 - 0 => -5
 Ex: subtract(9); => 9 - 8 - 7 - 6 - 5 - 4 - 3 - 2 - 1 - 0 => -27
 */
+function subtract(n){
+    let x= n;
+    i= 1;
+    while(i!=n+1){
+        x= x-(n-i);
+        i++;
+    }
+    return x;
+}
 
+console.log(subtract(2));
+console.log(subtract(5));
+document.getElementById("q1").innerHTML ="Q1:Write a function called subtract";
+document.getElementById("ans1").innerHTML =`subtract(2)= ${subtract(2)}`;
+
+////////////////////////////////////////////
 /*
 2
 Create a function called factorial
@@ -30,7 +45,20 @@ and return the product of all integers up to n starting from 1
 Ex: factorial(2); => 2 * 1 => 2
 Ex: factorial(4); => 4 * 3 * 2 * 1 => 24
 */
+function factorial(n){
+    i=1;
+    let x =n;
+    while(i<n){
+        x= x* (n-i);
+        i++;
+    }
+    return x;
+}
 
+console.log(factorial(2));
+console.log(factorial(4));
+document.getElementById("q2").innerHTML ="Q2:Write a function called factorial";
+document.getElementById("ans2").innerHTML =`factorial(2)= ${factorial(2)}`;
 
 /*
 3
@@ -43,7 +71,20 @@ Important: the continue condition should be [somthing !== 0]
 Ex: repeatStr("to",2); => "to to"
 Ex: repeatStr("to",4); => "to to to to"
 */
+function repeatStr(string,num){
+    let con= string;
+    let i= 1;
+    while(num-i !== 0){
+    con+= ' '+string;
+    i++;
+    }
+    return con;
+}
 
+console.log(repeatStr("to",2));
+console.log(repeatStr("to",4));
+document.getElementById("q3").innerHTML ="Q3:Write a function called repeatStr";
+document.getElementById("ans3").innerHTML =`repeatStr("to",2)= ${repeatStr("to",2)}`;
 
 /*
 4
@@ -53,7 +94,19 @@ and will return the sumation from the first number to the second number
 Ex: sum2(4, 5); => 4 + 5 => 9
 Ex: sum2(3, 6); => 3 + 4 + 5 + 6 => 18
 */
+function sum2(num1,num2){
+    let sum= num1;
+    let i= num1+1;
+    while(i != num2+1){
+        sum+= i;
+        i++;
+    }
+    return sum;
+}
 
+console.log(sum2(4, 5));
+document.getElementById("q4").innerHTML ="Q4:Write a functioncalled sum2";
+document.getElementById("ans4").innerHTML =`sum2(4, 5)= ${sum2(4, 5)}`;
 
 /*
 5
@@ -66,8 +119,21 @@ and return the first string number time
 Ex: repeatStr2("ro","cc"); => "ro ro"
 Ex: repeatStr2("ro","fff"); => "ro ro ro"
 */
+function repeatStr2(str1, str2){
+    let con= str1;
+    let i= 1;
+    let num= str2.length;
+    while(num-i !== 0){
+    con+= ' '+str1;
+    i++;
+    }
+    return con;
+}
 
-
+console.log(repeatStr2("ro","cc"));
+console.log(repeatStr2("ro","fff"));
+document.getElementById("q5").innerHTML ="Q5:Write a function called repeatStr2";
+document.getElementById("ans5").innerHTML =`repeatStr2("ro","cc")= ${repeatStr2("ro","cc")}`;
 /*
 6
 Create a function called multiOf
@@ -79,8 +145,14 @@ Ex: multiOf(4,10,3); => 4000
 Ex: multiOf(6,3,2); => 54
 Ex: multiOf(6,2,3); => 48
 */
+function multiOf(n1,n2,n3){
+    return n1*(Math.pow(n2, n3));
+}
 
-
+console.log(multiOf(4,10,3));
+console.log(multiOf(6,3,2));
+document.getElementById("q6").innerHTML ="Q6:Write a function called multiOf";
+document.getElementById("ans6").innerHTML =`multiOf(4,10,3)= ${multiOf(4,10,3)}`;
 /*
 7
 Create a function called muti2
@@ -90,8 +162,20 @@ from the first number to the second number
 Ex: muti2(4, 5); => 4 * 5 => 20
 Ex: muti2(3, 6); => 3 * 4 * 5 * 6 => 360
 */
+function muti2(num1,num2){
+    let mult= num1;
+    let i= num1+1;
+    while(i != num2+1){
+        mult*= i;
+        i++;
+    }
+    return mult;
+}
 
-
+console.log(muti2(4, 5));
+console.log((muti2(3, 6)));
+document.getElementById("q7").innerHTML ="Q7:Write a function called multi2";
+document.getElementById("ans7").innerHTML =`muti2(4, 5)= ${muti2(4, 5)}`;
 /*
 8
 Create a function called numberBetweenUs
@@ -103,8 +187,20 @@ and return the number between them
 numberBetweenUs(2,8) => "3, 4, 5, 6, 7"
 numberBetweenUs(1,3) => "2"
 */
+function numberBetweenUs(n1, n2){
+    let num1=n1+1;
+    let sum= `${num1}`;
+    while(num1 !== n2-1){
+        sum+= `, ${num1+1}`;
+        num1 ++;
+    }
+    return sum;
+}
 
-
+console.log(numberBetweenUs(2,8));
+console.log(numberBetweenUs(1,3));
+document.getElementById("q8").innerHTML ="Q8:Write a function called namednumberBetweenUs";
+document.getElementById("ans8").innerHTML =`numberBetweenUs(2,8)= ${numberBetweenUs(2,8)}`;
 /*
 9
 Write a function called countDown
@@ -122,7 +218,22 @@ countDown(2)
 countDown(7)
 => "7, 6, 5, 4, 3, 2, 1, done"
 */
+function countDown(num){
+    let sum= `${num}`;
+    let i=1;
+    while(i != num){
+        sum+= `, ${num-i}`;
+        i++;
+    }
+    if(i==num){
+        sum+= `, done`;
+    }
+    return sum;
+}
 
+console.log(countDown(5));
+document.getElementById("q9").innerHTML ="Q9:Write a function called countDown";
+document.getElementById("ans9").innerHTML =`countDown(5)= ${countDown(5)}`;
 /*
 10
 Write a function called multiplication2
@@ -133,7 +244,19 @@ multiplication2(5,4) => 20
 multiplication2(2,8) => 16
 multiplication2(7,6) =>  42
 */
+function multiplication2(n1,n2){
+    let i=0;
+    let sum= 0;
+    while(i != n2){
+        sum+= n1;
+        i++;
+    }
+    return sum;
+}
 
+console.log(multiplication2(5,4));
+document.getElementById("q10").innerHTML ="Q10:Write a function called multiplication2";
+document.getElementById("ans10").innerHTML =`multiplication2(5,4)= ${multiplication2(5,4)}`;
 /*
 11
 Write a function called mod2
@@ -145,7 +268,20 @@ mod2(2,8) => 2
 mod2(7,4) => 3
 mod2(8,4) => 0
 */
+function mod2(n1,n2){
+    if(n1<n2){
+        return n1;
+    }
+    let x=n1;
+    while(x>=n2){
+        x-=n2;
+    }
+    return x;
+}
 
+console.log(mod2(5,4));
+document.getElementById("q11").innerHTML ="Q11:Write a function called mod2";
+document.getElementById("ans11").innerHTML =`mod2(5,4)= ${mod2(5,4)}`;
 
 /*
 12
@@ -161,7 +297,25 @@ repeatChar("school","a") => 0
 repeatChar("School","s") => 1
 try more case by yourself
 */
+function repeatChar(string,char){
+    let str= string.toLowerCase();
+    let i=0;
+    let l=string.length;
+    let count=0;
+    while(i<l){
+        if(str[i] == char){
+            count+=1;
+        }
+        i++
+    }
+    return count;
+}
 
+
+console.log(repeatChar("schOol","o"));
+console.log(repeatChar("school","a"));
+document.getElementById("q12").innerHTML ="Q12:Write a function called repeatChar";
+document.getElementById("ans12").innerHTML =`repeatChar("schOol","o")= ${repeatChar("schOol","o")}`;
 
 
 

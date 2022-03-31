@@ -316,25 +316,32 @@ Ex: shorterString("air","tr","car","github","by")
 => by
 
 */
+
 function shorterString(str1 ,str2 ,str3 ,str4, str5){
-  if (str1.length<str2.length){
-    if (str1.length<str3.length){
-      if (str1.length<str4.length){
-        if (str1.length<str5.length){
-          return str1;
-        }else{return str5;}
-      }else if(str4.length<str5.length){
-        return str4;
-      }else {
-        return str5;
-      }
-    }else if(str3.length<str4.length){
-      if (str3.length<str5){
-        return str3;
-      }else {return str5;}
-    }
+  let str11= str1.length;
+  let str22= str2.length;
+  let str33= str3.length;
+  let str44= str4.length;
+  let str55= str5.length;
+  let shortest=str1;
+  if (str22<str11){
+      shortest=str2;
   }
+  if (str33<str11 && str33<str22){
+      shortest=str3;
+  }
+  if (str44<str11 && str44<str22 && str44<str33){
+      shortest=str4;
+  }
+  if (str55<str11 && str55<str22 && str55<str33 && str55<str44){
+      shortest=str5;
+  }
+  return shortest;
 }
+shorterString("air","school","car","by","github");
+console.log(shorterString("air","school","car","by","github"));
+document.getElementById("q11").innerHTML ="Q11:Write a function called shorterString";
+document.getElementById("ans11").innerHTML =`shorterString("air","school","car","by","github") ${shorterString("air","school","car","by","github")}`;
 //////////////////////////////////////////////////////////////////
 /*
 14
@@ -350,8 +357,27 @@ Ex: longerString("air","schoo","car","github")
 
 try all the cases (change the order of the longestString)
 */
-
-
+function longerString(str1 ,str2 ,str3 ,str4){
+  let str11= str1.length;
+  let str22= str2.length;
+  let str33= str3.length;
+  let str44= str4.length;
+  let longest=str1;
+  if (str22>str11){
+      longest=str2;
+  }
+  if (str33>str11 && str33>str22){
+      longest=str3;
+  }
+  if (str44>str11 && str44>str22 && str44>str333){
+      longest=str4;
+  }
+  return longest;
+}
+longerString("air","school","car","github")
+console.log( longerString("air","school","car","github"));
+document.getElementById("q12").innerHTML ="Q12:Write a function called longerString";
+document.getElementById("ans12").innerHTML =` longerString("air","school","car","github") is ${ longerString("air","school","car","github")}`;
 
 //////////////////////////////////////////////////////////////////////
 /*
@@ -444,6 +470,13 @@ Ex: fullName("Adam","McCallen")
 Ex: fullName("Alex", "Mercer")
 => "Alex Mercer"
 */
+function fullName(firstName, lastNname){
+  return firstName+' '+lastNname;
+}
+
+console.log(fullName("Adam","McCallen"));
+document.getElementById("q16").innerHTML ="Q16:Write a function called fullName";
+document.getElementById("ans16").innerHTML =`fullName("Adam","McCallen") ${fullName("Adam","McCallen")}`;
 
 
 /*
@@ -459,8 +492,14 @@ Ex: average(5,7,9,3,5)
 => 5.8
 
 */
-
-
+function average(n1, n2, n3, n4, n5){
+  let sum= n1+n2+n3+n4+n5;
+  let average= sum/5;
+  return average;
+}
+console.log(average(1,2,3,4,5));
+document.getElementById("q17").innerHTML ="Q17:Write a function called average";
+document.getElementById("ans17").innerHTML =`average(1,2,3,4,5) ${average(1,2,3,4,5)}`;
 /*
 20
 Write a function called randomNumber
@@ -475,6 +514,15 @@ Ex: randomNumber()
 => 0.475
 
 */
+function randomNumber(){
+  return Math.random();
+}
+console.log(randomNumber());
+document.getElementById("q18").innerHTML ="Q18:Write a function called randomNumber";
+document.getElementById("ans18").innerHTML =`randomNumber() ${randomNumber()}`;
+
+//////////Task21
+
 
 /*
 21
@@ -490,7 +538,12 @@ Ex: randomBetweenNumbers(3,100)
 => 23
 
 */
-
+function randomBetweenNumbers(num1, num2){
+  return (num2-num1)*Math.random()+num1;
+}
+console.log(randomBetweenNumbers(1,8));
+document.getElementById("q19").innerHTML ="Q19:Write a function called randomBetweenNumbers";
+document.getElementById("ans19").innerHTML =`randomBetweenNumbers(1,8) ${randomBetweenNumbers(1,8)}`;
 
 /*
 22
@@ -512,8 +565,28 @@ Ex: scoreInUniversty(3)
 Ex: scoreInUniversty(71)
 => "C"
 */
-
-
+function scoreInUniversity(score){
+  let grade= '';
+  if (0<=score && score<=49){
+      grade= 'F';
+  }
+  if (50<=score && score<=69){
+      grade= 'D';
+  }
+  if (70<=score && score<=84){
+      grade= 'C';
+  }
+  if (85<=score && score<=94){
+      grade= 'B';
+  }
+  if (95<=score && score<=100){
+      grade= 'A';
+  }
+  return grade;
+}
+console.log(scoreInUniversity(96));
+document.getElementById("q20").innerHTML ="Q20:Write a function called randomBetweenNumbers";
+document.getElementById("ans20").innerHTML =`scoreInUniversity(96) ${scoreInUniversity(96)}`;
 /*
 23
 Write a function called counter
@@ -531,8 +604,14 @@ Ex: counter()
 => 3
 
 */
+let counter_num=0;
+function counter(){
+    return ++counter_num;
+}
 
-
+console.log(counter());
+document.getElementById("q21").innerHTML ="Q21:Write a function called counter";
+document.getElementById("ans21").innerHTML =`counter() ${counter()}`;
 /*
 24
 Write a function called resetCounter
@@ -564,4 +643,13 @@ Ex: resetCounter()
 Ex: counter()
 => 1
 */
+function resetCounter(){
+  let oldCounter_num= counter_num;
+  counter_num= 0;
+  return oldCounter_num + ' and the counter is reset now.';
+}
+console.log(counter());
+console.log(counter());
+console.log(resetCounter());
+console.log(counter());
 

@@ -155,7 +155,25 @@ Ex: repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO"
 // function repeatWord(str){
 
 // }
-
+function repeatWord(str) {
+ let split = str.split(" "),
+  obj = {};
+  
+  for (let i = 0; i < split.length; i++) {
+  if (obj[split[i]] === undefined) {
+    obj[split[i]] = 1;
+  }
+   else {
+    obj[split[i]]++;
+  }
+  }
+    return obj;
+  };
+      
+  console.log(repeatWord("My name is alex mercer class name B my baba mama hello Hello HELLO"));
+  document.getElementById("q6").innerHTML="Question6: Create a function called repeatWord";
+document.getElementById("ans6").innerHTML=`repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO") ==>${repeatWord("My name is alex mercer class name B baba mama hello Hello HELLO")}`;
+  
 
 /*
 8
@@ -168,8 +186,29 @@ and return an object that represents how many times each char repeat
 Ex: repeatChar("mamababatetacedo")
 => { m:2,  a:5, b:2, t2:, e:2, c:1, d:1, o:1}
 */
+function repeatChar(str) {
+  var obj={};
+  for(let x = 0, length = str.length; x < length; x++) {
+      var l = str.charAt(x)
+      obj[l] = (isNaN(obj[l]) ? 1 : obj[l] + 1);
+    }
+    return obj;
+  };
+  console.log(repeatChar("mamababatetacedo"));
+  document.getElementById("q7").innerHTML="Question7: Create a function called repeatChar";
+  document.getElementById("ans7").innerHTML=`repeatChar("mamababatetacedo") ==>${repeatChar("mamababatetacedo")}`;
 
-
+  ////or/////
+  // function repeatChar1(string){
+  //   let subSting=string.toLowerCase(); // To count Uppercase and Lowercase
+  //   var obj={}
+  //   for(let i = 0, length = subSting.length; i < length; i++) {
+  //       var objIndex = subSting.charAt(i)
+  //       obj[objIndex] = (isNaN(obj[objIndex]) ? 1 : obj[objIndex] + 1); //Another way to write if statment
+  //   } 
+  //   return obj;
+  // }
+  // console.log(repeatChar1("mamababatetacedo"));
 /*
 9
 Create a function called selectFromObject
@@ -179,8 +218,24 @@ and return an object have the key that inside the array
 Ex: selectFromObject({a: 1, cat: 3}, ['a', 'cat', 'd'])
 =>  {a: 1, cat: 3}
 */
-
-
+function selectFromObject(x,y){
+  let obj = {}
+      for(let i =0 ; i<y.length ; i++)
+      {
+          // console.log(Object.keys(x)[0]);
+          // console.log(y[0]);
+          if(Object.keys(x)[i]==y[i])
+          {
+              // console.log(x[y[i]]);
+              obj[y[i]] = x[y[i]];
+          }
+      }
+  return obj
+  }
+  console.log(selectFromObject({a: 1, cat: 3 }, ['a', 'cat', 'd']));
+  document.getElementById("q8").innerHTML="Question8: Create a function called selectFromObject";
+  document.getElementById("ans8").innerHTML=`selectFromObject({a: 1, cat: 3 }, ['a', 'cat', 'd']) ==>${selectFromObject({a: 1, cat: 3 }, ['a', 'cat', 'd'])}`;
+  ///////////////////////////
 /*
 10
 Create a function called objectToArray
@@ -190,7 +245,21 @@ and return an array of the keys and values in this object
 Ex: objectToArray({firstName:"Moh",age:24})
 => ["firstName","Moh","age",24]
 */
+function objectToArray(obj){
+  let arr=[];
+  let objkeys= Object.keys(obj);
+  let objvals=Object.values(obj);
+  let l=objkeys.length;
+  for(let i=0; i<l; i++){
+      arr.push(objkeys[i]);
+      arr.push(objvals[i]);
+  }
+  return arr; 
+}
 
+console.log(objectToArray({firstName:"Moh",age:24}));
+document.getElementById("q8").innerHTML="Question8: Create a function called objectToArray";
+  document.getElementById("ans8").innerHTML=`objectToArray({firstName:"Moh",age:24}) ==>${objectToArray({firstName:"Moh",age:24})}`;
 
 /*
 11
@@ -201,7 +270,19 @@ and return an object of the keys and values in this object
 Ex: arrayToObject(["firstName","Moh","age",24])
 => {firstName:"Moh",age:24}
 */
+function arrayToObject(arr){
+  let obj={};
+  let l= arr.length;
+  for (let i=0; i<l;){
+      obj[arr[i]]=arr[i+1];
+      i+=2;
+  }
+  return obj;
+}
 
+console.log(arrayToObject(["firstName","Moh","age",24]));
+document.getElementById("q9").innerHTML="Question9: Create a function called arrayToObject";
+  document.getElementById("ans9").innerHTML=`arrayToObject(["firstName","Moh","age",24]) ==> ${arrayToObject(["firstName","Moh","age",24])}`;
 
 /*
 12
@@ -213,7 +294,17 @@ and return a new object that have only the values that is a number
 Ex: onlyNumber({firstName:"Moh",age:24,movies:[1,5,"string"]})
 => {age:24}
 */
-
+function onlyNumber(obj) {
+  let newObj={};
+  for (let i = 0; i < Object.keys(obj).length; i++) {
+    if (typeof(Object.values(obj)[i]) == `number`) {
+      newObj[Object.keys(obj)[i]] = Object.values(obj)[i];
+    }
+  } return newObj;
+}
+console.log(onlyNumber({firstName:"Moh",age:24,movies:[1,5,"string"]}));
+document.getElementById("q10").innerHTML="Question10: Create a function called onlyNumber";
+  document.getElementById("ans10").innerHTML=`onlyNumber({firstName:"Moh",age:24,movies:[1,5,"string"], he:7,she:9}) ==> ${onlyNumber({firstName:"Moh",age:24,movies:[1,5,"string"]})}`;
 
 /*
 13
@@ -225,7 +316,22 @@ and return a new object that have only the values that is a string
 Ex: onlyString({firstName:"Moh",age:24,movies:[1,5,"string"]})
 => {firstName:"Moh"}
 */
+function onlyString(obj){
+  let newobj={};
+  let objkeys= Object.keys(obj);
+  let objvals= Object.values(obj);
+  let l= objkeys.length;
+  for (let i=0; i<l;i++){
+      if(typeof(objvals[i]) == 'string'){
+        newobj[objkeys[i]] = objvals[i];
+      }
+  }
+  return newobj;
+}
 
+console.log(onlyString({firstName:"Moh",age:34,movies:[1,5,"string"]}));
+document.getElementById("q11").innerHTML="Question11: Create a function called onlyString";
+  document.getElementById("ans11").innerHTML=`onlyString({firstName:"Moh",age:34,movies:[1,5,"string"]}) ==> ${onlyString({firstName:"Moh",age:34,movies:[1,5,"string"]})}`;
 
 /*
 14
@@ -237,8 +343,22 @@ and return a new object that have only the values that is a array
 Ex: onlyArray({firstName:"Moh",age:24,movies:[1,5,"string"]})
 => {movies:[1,5,"string"]}
 */
+function onlyArray(obj){
+  let newobj={};
+  let objkeys= Object.keys(obj);
+  let objvals= Object.values(obj);
+  let l= objkeys.length;
+  for (let i=0; i<l;i++){
+      if(Array.isArray(objvals[i])){
+        newobj[objkeys[i]] = objvals[i];
+      }
+  }
+  return newobj;
+}
 
-
+console.log(onlyArray({firstName:"Moh",age:34,movies:[1,5,"string"]})); 
+document.getElementById("q12").innerHTML="Question12: Create a function called onlyArray";
+  document.getElementById("ans12").innerHTML=`onlyArray({firstName:"Moh",age:34,movies:[1,5,"string"]}) ==> ${onlyArray({firstName:"Moh",age:34,movies:[1,5,"string"]})}`;
 /*
 15
 Create a function called keysArray
@@ -249,3 +369,11 @@ Ex: keysArray({firstName:"Moh",age:24,movies:[1,5,"string"]})
 => ['firstName', 'age', 'movies']
 
 */
+function keysArray(obj){
+  let list=Object.keys(obj);
+  return list;
+}
+
+console.log(keysArray({firstName:"Moh",age:24,movies:[1,5,"string"]}));
+document.getElementById("q13").innerHTML="Question13: Create a function called keysArray";
+  document.getElementById("ans13").innerHTML=`keysArray({firstName:"Moh",age:24,movies:[1,5,"string"]}) ==> ${keysArray({firstName:"Moh",age:24,movies:[1,5,"string"]})}`;

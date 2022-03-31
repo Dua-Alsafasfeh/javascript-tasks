@@ -7,7 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
+    <label for="pa1">Password(6 charechter):</label>
+    <input type="password" id="pa1" value="" onkeyup="checkPass();" /><span id="sp1" style="color: rgb(0, 0, 0);"></span>
+    <br><br>
+    <label for="pa2" >Repeat Password:</label>
+    <input type="password" id="pa2" style="margin-left: 2.75%;" onkeyup="checkPass();"><span id="sp2" style="color: rgb(0, 0, 0);"></span>
+    <br><br>
+    <button style="display: none;" id="btn1">Submit</button>
+    <!-- <div>
         <form action="">
             <span>Enter password(min 6 character):</span>
             <input type="password" id="pass" name="pass">
@@ -17,7 +24,7 @@
             <br><br>
             <button type="submit">Submit</button> 
         </form>
-    </div>
+    </div> -->
 </body>
 <script src="app.js"></script>
 </html>
